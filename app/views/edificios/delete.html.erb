@@ -2,7 +2,7 @@
 
 <%= form_for(@edificio, :method => "delete") do |f|%>
 
-<p>¿Está seguro de borrar este edificio?</p>
+<h2>¿Está seguro de borrar este edificio?</h2>
 
 <p><%= @edificio.nombre%></p>
 <p><%= @edificio.direccion%></p>
@@ -11,3 +11,6 @@
 <%= f.submit "Eliminar"%>
 
 <%end%>
+<br>
+<br>
+<%= link_to "Volver", :back %>
