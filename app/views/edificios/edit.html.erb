@@ -1,2 +1,17 @@
-<h1>Edificios#edit</h1>
-<p>Find me in app/views/edificios/edit.html.erb</p>
+<h1>Editando información de edificios</h1>
+
+<%= form_for(@edificio) do |f|%>
+<%= f.label :nombre%>
+<%= f.text_field :nombre%>
+<br>
+<br>
+<%= f.label :direccion%>
+<%= f.text_field :direccion%>
+<br>
+<br>
+<%= f.label :ciudad%>
+<%= f.text_field :ciudad%>
+
+<%= f.submit "Editar"%>
+
+<%end%>

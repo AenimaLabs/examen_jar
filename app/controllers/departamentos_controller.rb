@@ -1,6 +1,6 @@
 class DepartamentosController < ApplicationController
   def index
-    @departamentos = Departamento.order(numero_departamento: :desc)
+    @departamentos = Departamento.order(numero: :desc)
   end
 
   def show

@@ -1,8 +1,10 @@
 class EdificiosController < ApplicationController
   def index
+    @edificios = Edificio.order(id: :desc)
   end
 
   def show
+    @edificio = Edificio.find(params[:id])
   end
 
   def new
@@ -19,7 +21,18 @@ class EdificiosController < ApplicationController
   end
 
   def edit
+    @edificio = Edificio.find(params[:id])
+    
   end
+
+  def update 
+    @edificio = Edificio.find(params[:id])
+    if @edificio.update(edificio_params)
+      redirect_to(edificios_path(@edificio))
+    else
+      render("edit")
+  end
+end
 
   def delete
   end

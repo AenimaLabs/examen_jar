@@ -1,2 +1,23 @@
-<h1>Departamentos#index</h1>
-<p>Find me in app/views/departamentos/index.html.erb</p>
+<br>
+<br>
+<%= link_to "Ingresar Nuevo Departamento", new_departamento_path, :class=> "action new"%>
+
+<table>
+    <tr>
+        <th>Número de Departamento</th>        
+        <th>Edificio</th>        
+        <th>Acciones</th>
+    </tr>
+        
+    <% @departamentos.each do |i| %>                  
+    <tr>
+        <td><%=i.numero%></td>
+        <td><%=i.edificio_id%></td>
+        <td><%= link_to "Mostrar", departamento_path(i), :class=> "action show"%> </td>
+    </tr>
+    <% end %>
+
+</table>
+<br>
+
+<%= link_to "Enlace 18-O", new_departamento_path%> 
