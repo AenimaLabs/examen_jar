@@ -1,2 +1,13 @@
-<h1>Edificios#delete</h1>
-<p>Find me in app/views/edificios/delete.html.erb</p>
+<h1>Borrando Edificios</h1>
+
+<%= form_for(@edificio, :method => "delete") do |f|%>
+
+<p>¿Está seguro de borrar este edificio?</p>
+
+<p><%= @edificio.nombre%></p>
+<p><%= @edificio.direccion%></p>
+<p><%= @edificio.ciudad%></p>
+
+<%= f.submit "Eliminar"%>
+
+<%end%>

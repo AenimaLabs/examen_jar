@@ -16,7 +16,8 @@
         <td><%=i.direccion%></td>
         <td><%=i.ciudad%></td>
         <td><%= link_to "Mostrar", edificio_path(i), :class=> "action show"%> 
-        <%= link_to "Editar", edit_edificio_path(i), :class=> "action edit"%> </td>
+        <%= link_to "Editar", edit_edificio_path(i), :class=> "action edit"%> 
+        <%= link_to "Eliminar", delete_edificio_path(i), :class=> "action delete"%> </td>
     </tr>
     <% end %>
 

@@ -35,7 +35,15 @@ class EdificiosController < ApplicationController
 end
 
   def delete
+    @edificio = Edificio.find(params[:id])
   end
+
+  def destroy
+    @edificio = Edificio.find(params[:id])
+    @edificio.destroy
+    redirect_to(edificios_path(@edificio))
+  end
+  
 
   private
   def edificio_params
