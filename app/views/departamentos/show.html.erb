@@ -1,9 +1,35 @@
-<h1>Departamentos#show</h1>
+<h1>Departamento#show</h1>
+<h2>Detalle departamento</h2>
+<br>
+<table>
+    <tr>
+           
+        <th>Número de departamento</th>  
+        <th>Nombre edificio</th>     
+        <th>Dirección</th>   
+        <th>Ciudad</th> 
+        
+    </tr>
+      
+      <tr>
+        <td><%= @departamento.numero%></td>
+        <td><%= @departamento.edificio.nombre %></td>
+        <td><%= @departamento.edificio.direccion %></td>
+        <td><%= @departamento.edificio.ciudad%></td>
+      
+      </tr>
+    
+ 
+
+</table>
+
+
 
 <br>
 <br>
-
-<p><%= @departamento.numero%></p>
-<p><%= @departamento.edificio_id%></p>
+<%= link_to "Volver al listado de departamentos", departamentos_path%>
 <br>
-<%= link_to "Volver", :back %>
+<br>
+<%= link_to "Volver al menú principal", mains_path %>
+
+

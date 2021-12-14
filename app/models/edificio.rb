@@ -6,6 +6,10 @@ class Edificio < ApplicationRecord
   
   after_update :actualizacion_exitosa
 
+  # def to_s
+  #   name
+  # end
+
   private
   
   def creacion_exitosa

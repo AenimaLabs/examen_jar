@@ -1,25 +1,35 @@
-<br>
-<br>
-
+<h1>Departamentos#index</h1>
+<p>Tabla general de departamentos</p>
 <table>
+  <thead>
     <tr>
-        <th>Número de Departamento</th>        
-        <th>Edificio</th>        
-        <th>Acciones</th>
-    </tr>
-        
-    <% @departamentos.each do |i| %>                  
-    <tr>
-        <td><%=i.numero%></td>
-        <td><%=i.edificio_id%></td>
-        <td><%= link_to "Mostrar", departamento_path(i), :class=> "action show"%> </td>
-    </tr>
-    <% end %>
+      <th>Número</th>
+      <th>Edificio</th>
+      <%# <th>Dirección</th>
+      <th>Ciudad</th> %>
 
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% @departamentos.each do |depa| %>
+      <tr>
+        <td><%= depa.numero %></td>
+        <td><%= depa.edificio.nombre %></td>
+        <!--<td><%= depa.edificio.direccion %></td>
+        <td><%= depa.edificio.ciudad %></td>-->
+        <td><%= link_to "Mostrar", departamento_path(depa), :class=> "action show"%></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
+
 <br>
+<br>
+
 
 <%= link_to "Ingresar Nuevo Departamento", new_departamento_path, :class=> "action new"%>
+<br>
 <br>
 <%= link_to "Volver al menú principal", mains_path %>
 

@@ -8,6 +8,7 @@
         <th>Dirección</th>
         <th>Ciudad</th>
         <th>Acciones</th>
+        
     </tr>
         
     <% @edificios.each do |i| %>                  
@@ -25,5 +26,6 @@
 <br>
 
 <%= link_to "Agregar Nuevo Edificio", new_edificio_path, :class=> "action new"%>
+<br>
 <br>
 <%= link_to "Volver al menú principal", mains_path%>

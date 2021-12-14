@@ -3,14 +3,33 @@
 <%= form_for(@edificio, :method => "delete") do |f|%>
 
 <h2>¿Está seguro de borrar este edificio?</h2>
+<br>
+<table>
 
-<p><%= @edificio.nombre%></p>
-<p><%= @edificio.direccion%></p>
-<p><%= @edificio.ciudad%></p>
+    <tr>
+           
+        <th>Nombre edificio</th>     
+        <th>Dirección</th>   
+        <th>Ciudad</th> 
+                        
+    </tr>
 
+    <tr>
+        <td><%= @edificio.nombre%></td>
+        <td><%= @edificio.direccion%></td>
+        <td><%= @edificio.ciudad%></td>
+    </tr>
+
+
+</table>
 <%= f.submit "Eliminar"%>
 
 <%end%>
+
 <br>
 <br>
 <%= link_to "Volver al listado de edificios", edificios_path %>
+<br>
+<br>
+<%= link_to "Volver al menú principal", mains_path %>
+
