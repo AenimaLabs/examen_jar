@@ -1,10 +1,12 @@
 class EdificiosController < ApplicationController
   def index
-    @edificios = Edificio.order(id: :desc)
+    # @edificios = Edificio.order(id: :desc)
+    @edificios = Edificio.all
   end
 
   def show
     @edificio = Edificio.find(params[:id])
+    @departamentos = Departamento.where(edificio_id: @edificio.id) #linea nueva
   end
 
   def new
@@ -22,6 +24,7 @@ class EdificiosController < ApplicationController
 
   def edit
     @edificio = Edificio.find(params[:id])
+    
     
   end
 

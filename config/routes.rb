@@ -24,5 +24,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :departamentos
+  # resources :departamentos
+
+  resources :departamentos do
+    member do
+      get :delete
+    end
+  end
 end

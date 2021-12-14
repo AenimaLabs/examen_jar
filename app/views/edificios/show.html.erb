@@ -1,8 +1,32 @@
+<h1>Edificios#show</h1>
+<p>Mostrar detalle de Edificio y Departamentos asociados a él</p>
+
 <br>
-<br>
+
 
 <h1><%= @edificio.nombre%></h1>
 <p><%= @edificio.direccion%></p>
 <p><%= @edificio.ciudad%></p>
 <br>
-<%= link_to "Volver", :back %>
+
+<table>
+    <tr>
+           
+        <th>Número de departamento</th>        
+        <!--<th>Acciones</th>-->
+    </tr>
+        
+    <!--esto es nuevo-->
+    <% @departamentos.each do |depa| %>
+      <tr>
+        <td><%= depa.numero%></td>
+       <!--<td><%= link_to "Mostrar", depa %></td>-->
+      </tr>
+    <% end %> 
+ 
+
+</table>
+<br>
+
+<%= link_to "Volver al listado de edificios", edificios_path %>
+
