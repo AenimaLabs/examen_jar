@@ -1,2 +1,18 @@
 <h1>Departamentos#edit</h1>
-<p>Find me in app/views/departamentos/edit.html.erb</p>
+<h2>Editando información de departamentos</h2>
+
+<%= form_for(@departamento) do |f|%>
+<%= f.label :numero%>
+<%= f.text_field :numero%>
+
+
+<%= f.submit "Editar"%>
+
+<%end%>
+
+<br>
+<br>
+<%= link_to "Volver al listado de departamentos", departamentos_path %>
+<br>
+<br>
+<%= link_to "Volver al menú principal", mains_path %>

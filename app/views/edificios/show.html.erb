@@ -4,29 +4,39 @@
 <table>
     <tr>
            
-        <th>Número de departamento</th>  
         <th>Nombre edificio</th>     
         <th>Dirección</th>   
         <th>Ciudad</th> 
+        
                         
     </tr>
-      
-    <% @departamentos.each do |depa| %>
-      <tr>
-           
-        <td><%= depa.numero%></td>
-        <td><%= @edificio.nombre%></td>
+
+    <tr> <td><%= @edificio.nombre%></td>
         <td><%= @edificio.direccion%></td>
         <td><%= @edificio.ciudad%></td>
-      
-      </tr>
-    <% end %>
- 
-
+    </tr>   
+    
 </table>
 
 <br>
 
+<table>
+    <tr>           
+        <th>Número departamentos</th>          
+    </tr>
+
+    <% @departamentos.each do |depa| %>
+      <tr>  
+        <td><%= depa.numero%></td>
+       
+      </tr>  
+      
+    <% end %>  
+    
+</table>
+
+<br>
+<br>
 <%= link_to "Volver al listado de edificios", edificios_path %>
 <br>
 <br>

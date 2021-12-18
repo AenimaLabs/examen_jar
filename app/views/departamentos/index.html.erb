@@ -5,6 +5,7 @@
     <tr>
       <th>Número</th>
       <th>Edificio</th>
+      <th>Acción</th>
       <%# <th>Dirección</th>
       <th>Ciudad</th> %>
 
@@ -19,6 +20,8 @@
         <!--<td><%= depa.edificio.direccion %></td>
         <td><%= depa.edificio.ciudad %></td>-->
         <td><%= link_to "Mostrar", departamento_path(depa), :class=> "action show"%></td>
+       <td><%= link_to "Editar", edit_departamento_path(depa), :class=> "action edit"%> </td> 
+       <td><%= link_to "Eliminar", delete_departamento_path(depa), :class=> "action delete"%> </td></td> 
       </tr>
     <% end %>
   </tbody>

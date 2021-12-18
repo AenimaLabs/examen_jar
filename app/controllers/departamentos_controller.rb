@@ -27,31 +27,35 @@ class DepartamentosController < ApplicationController
       end
       
     end
-    
-
-    # if @departamento.save
-    #   redirect_to(departamentos_path)
-    # else
-    #   render("new") 
-    # end
   end
+
+    def edit
+      @departamento = Departamento.find(params[:id])    
+    end
   
+    def update 
+      @departamento = Departamento.find(params[:id])
+      if @departamento.update(departamento_params)
+        redirect_to(departamentos_path(@departamento))
+      else
+        render("edit")
+      end
+    end
 
-  def edit
-  end
-
-  def update 
-  end
-
-  def delete
-  end
-
-  def destroy 
-  end
+    def delete
+      @departamento = Departamento.find(params[:id])
+    end
+  
+    def destroy
+      @departamento = Departamento.find(params[:id])
+      @departamento.destroy
+      redirect_to(departamentos_path(@departamento))
+    end
 
   private
 
   def departamento_params
     params.require(:departamento).permit(:numero, :edificio_id)
   end
+
 end

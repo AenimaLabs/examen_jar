@@ -6,7 +6,7 @@ class EdificiosController < ApplicationController
 
   def show
     @edificio = Edificio.find(params[:id])
-    @departamentos = Departamento.where(edificio_id: @edificio.id) #linea nueva
+    @departamentos = Departamento.where(edificio_id: @edificio.id)
   end
 
   def new

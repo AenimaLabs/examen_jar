@@ -1,2 +1,33 @@
 <h1>Departamentos#delete</h1>
-<p>Find me in app/views/departamentos/delete.html.erb</p>
+<h1>Borrando departamento</h1>
+
+<%= form_for(@departamento, :method => "delete") do |f|%>
+
+<h2>¿Está seguro de borrar este departamento?</h2>
+<br>
+<table>
+
+    <tr>
+           
+        <th>Número</th>     
+        
+                        
+    </tr>
+
+    <tr>
+        <td><%= @departamento.numero%></td>
+        
+    </tr>
+
+
+</table>
+<%= f.submit "Eliminar"%>
+
+<%end%>
+
+<br>
+<br>
+<%= link_to "Volver al listado de edificios", edificios_path %>
+<br>
+<br>
+<%= link_to "Volver al menú principal", mains_path %>
